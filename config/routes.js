@@ -2,6 +2,7 @@ module.exports  = (app) => {
     
     const users  = require  ('../controllers/UserController');
     const equipments = require ('../controllers/EquipmentController');
+    const management = require ('../controllers/ManageModel');
 
     // User
     app.post('/user/create', users.create);
@@ -17,4 +18,12 @@ module.exports  = (app) => {
     app.get('/equipment/:equipmentId', equipments.findOne);
     app.put('/equipment/:equipmentId', equipments.update);
     app.delete('/equipment/:equipmentId', equipments.delete);
+
+    // Management
+    app.post('/management/create', management.create);
+    app.get('/management/create', management.getAll);
+    app.get('/management/:managementId', management.findOne);
+    app.put('/management/:managementId', management.update);
+    app.delete('/management/:managementId', management.delete);
+
 }
