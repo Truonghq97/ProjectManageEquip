@@ -1,22 +1,20 @@
 module.exports  = (app) => {
     
     const users  = require  ('../controllers/UserController');
+    const equipments = require ('../controllers/EquipmentController');
 
-    // Create user
+    // User
     app.post('/user/create', users.create);
-
-    // Get all user
     app.get('/user/create', users.getAll)
-
-    // Find one user
     app.get('/user/:userId', users.findOne );
-
-    // Update user
     app.put('/user/:userId',  users.update)
-
-    // Delete user
     app.delete('/user/:userId', users.delete);
+    app.post('/user/login', users.login);
 
-     // Login user
-     app.post('/user/login', users.login);
+    // Equipment
+    app.post('/equipment/create', equipments.create);
+    app.get('/equipment/create', equipments.getAll);
+    app.get('/equipment/:equipmentId', equipments.findOne);
+    app.put('/equipment/:equipmentId', equipments.update);
+    app.delete('/equipment/:equipmentId', equipments.delete);
 }
