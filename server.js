@@ -11,7 +11,7 @@ app.use(bodyparser.json());
 
 require('./config/routes')(app)
 
-app.listen(3000, () => {
-    console.log('Express server start at port : 3000')
+app.listen(8000, () => {
+    console.log('Express server start at port : 8000')
 })
 
